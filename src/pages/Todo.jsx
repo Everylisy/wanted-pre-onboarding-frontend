@@ -25,13 +25,7 @@ function Todo() {
       <div>Todo</div>
       <AddTodo setTodoList={setTodoList} />
       {todolist.map((todo) => {
-        return (
-          <TodoItem
-            key={todo.id}
-            isCompleted={todo.isCompleted}
-            todo={todo.todo}
-          />
-        );
+        return <TodoItem key={todo.id} todo={todo} setTodoList={setTodoList} />;
       })}
     </>
   );

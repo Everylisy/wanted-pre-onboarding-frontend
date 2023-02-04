@@ -1,14 +1,16 @@
 import React from 'react';
+import DelTodo from './DelTodo';
 
-function TodoItem({ isCompleted, todo }) {
+function TodoItem({ todo, setTodoList }) {
   return (
     <ul>
       <li>
         <label>
-          <input type="checkbox" checked={isCompleted} readOnly />
-          {/*todo: readonly -> onChange로 수정 가능하게 */}
-          <span>{todo}</span>
+          <input type="checkbox" checked={todo.isCompleted} readOnly />
+          <span>{todo.todo}</span>
         </label>
+        <button data-testid="modify-button">수정</button>
+        <DelTodo todo={todo} todoId={todo.id} setTodoList={setTodoList} />
       </li>
     </ul>
   );
