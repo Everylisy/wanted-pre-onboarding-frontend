@@ -10,7 +10,7 @@ function TodoItem({ todo, setTodoList }) {
           <span>{todo.todo}</span>
         </label>
         <button data-testid="modify-button">수정</button>
-        <DelTodo todo={todo} todoId={todo.id} setTodoList={setTodoList} />
+        <DelTodo todoId={todo.id} setTodoList={setTodoList} />
       </li>
     </ul>
   );
