@@ -30,7 +30,7 @@ async function put(endpoint, data) {
 }
 
 async function del(endpoint, params = '') {
-  return axios.delete(SERVER_URL + endpoint + '/' + params, {
+  return axios.delete(SERVER_URL + endpoint + params, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('userToken')}`,
     },
