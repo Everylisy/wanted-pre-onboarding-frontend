@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { post } from '../api';
-import AskRedirect from '../components/AuthUI/AskRedirect';
 import Input from '../components/AuthUI/Input';
 import Button from '../components/AuthUI/Button';
+import Layout from '../components/AuthUI/Layout';
 
 function SignUp() {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ function SignUp() {
   const isFormValid = email.includes('@') && password.length >= 8;
 
   return (
-    <>
+    <Layout>
       <form onSubmit={handleSubmit}>
         <Input
           label="이메일"
@@ -66,8 +66,7 @@ function SignUp() {
           }}
         />
       </form>
-      <AskRedirect />
-    </>
+    </Layout>
   );
 }
 
