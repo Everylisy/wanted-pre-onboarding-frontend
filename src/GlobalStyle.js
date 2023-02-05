@@ -139,6 +139,8 @@ table {
   box-sizing: border-box;
 }
 body {
+  background-color: #0c0c0c;
+  color: #f3f3f3;
   font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
     'Pretendard Variable', Pretendard, Roboto, 'Noto Sans KR', 'Segoe UI',
     'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
