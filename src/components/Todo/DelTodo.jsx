@@ -1,5 +1,5 @@
 import { del } from '../../api';
-import Button from '../UI/Button';
+import Button from '../TodoUI/Button';
 
 function DelTodo({ todoId, setTodoList }) {
   const handleDelete = async () => {

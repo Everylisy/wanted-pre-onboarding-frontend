@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { put } from '../../api';
-import Button from '../UI/Button';
-import Input from '../UI/Input';
+import Button from '../TodoUI/Button';
+import Input from '../TodoUI/Input';
 
 function EditTodo({ todo, setEdit }) {
   const [inpTodo, setInpTodo] = useState(todo.todo);

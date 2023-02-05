@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from '../UI/Button';
+import Button from '../TodoUI/Button';
 import CheckBox from './CheckBox';
 import DelTodo from './DelTodo';
 import EditTodo from './EditTodo';

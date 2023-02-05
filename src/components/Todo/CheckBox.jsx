@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { put } from '../../api';
-import Input from '../UI/Input';
+import Input from '../TodoUI/Input';
 
 function CheckBox({ todo }) {
   const [isChecked, setIsChecked] = useState(todo.isCompleted);
