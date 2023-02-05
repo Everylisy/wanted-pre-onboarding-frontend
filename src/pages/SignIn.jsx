@@ -52,6 +52,7 @@ function SignIn() {
             type: 'email',
             placeholder: 'example@gmail.com',
             required: true,
+            autoFocus: true,
             onChange: (e) => setEmail(e.target.value),
             value: email,
           }}
