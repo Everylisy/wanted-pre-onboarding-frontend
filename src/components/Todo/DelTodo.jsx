@@ -1,5 +1,5 @@
-import React from 'react';
 import { del } from '../../api';
+import Button from '../UI/Button';
 
 function DelTodo({ todoId, setTodoList }) {
   const handleDelete = async () => {
@@ -12,9 +12,10 @@ function DelTodo({ todoId, setTodoList }) {
   };
 
   return (
-    <button data-testid="delete-button" onClick={handleDelete}>
-      삭제
-    </button>
+    <Button
+      btnText="삭제"
+      button={{ [`data-testid`]: 'delete-button', onClick: handleDelete }}
+    />
   );
 }
 

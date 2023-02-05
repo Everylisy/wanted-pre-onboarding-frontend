@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { put } from '../../api';
+import Input from '../UI/Input';
 
 function CheckBox({ todo }) {
   const [isChecked, setIsChecked] = useState(todo.isCompleted);
@@ -14,10 +15,12 @@ function CheckBox({ todo }) {
   };
 
   return (
-    <input
-      type="checkbox"
-      checked={isChecked ? true : false}
-      onChange={handleCheck}
+    <Input
+      input={{
+        type: 'checkbox',
+        checked: isChecked ? true : false,
+        onChange: handleCheck,
+      }}
     />
   );
 }
