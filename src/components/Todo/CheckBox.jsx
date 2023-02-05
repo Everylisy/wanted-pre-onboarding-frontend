@@ -6,12 +6,16 @@ function CheckBox({ todo }) {
   const [isChecked, setIsChecked] = useState(todo.isCompleted);
 
   const handleCheck = async () => {
-    setIsChecked((cur) => !cur);
-    const res = await put(`todos/${todo.id}`, {
-      todo: todo.todo,
-      isCompleted: !isChecked,
-    });
-    if (res.data.id === todo.id) todo.isCompleted = res.data.isCompleted;
+    try {
+      setIsChecked((cur) => !cur);
+      const res = await put(`todos/${todo.id}`, {
+        todo: todo.todo,
+        isCompleted: !isChecked,
+      });
+      if (res.data.id === todo.id) todo.isCompleted = res.data.isCompleted;
+    } catch (error) {
+      if (error.response.data.message) alert(error.response.data.message);
+    }
   };
 
   return (

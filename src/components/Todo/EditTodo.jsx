@@ -7,17 +7,21 @@ function EditTodo({ todo, setEdit }) {
   const [inpTodo, setInpTodo] = useState(todo.todo);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (todo.todo === inpTodo) {
+    try {
+      e.preventDefault();
+      if (todo.todo === inpTodo) {
+        setEdit((cur) => !cur);
+        return;
+      }
+      const res = await put(`todos/${todo.id}`, {
+        todo: inpTodo,
+        isCompleted: todo.isCompleted,
+      });
+      if (res.data.id === todo.id) todo.todo = res.data.todo;
       setEdit((cur) => !cur);
-      return;
+    } catch (error) {
+      if (error.response.data.message) alert(error.response.data.message);
     }
-    const res = await put(`todos/${todo.id}`, {
-      todo: inpTodo,
-      isCompleted: todo.isCompleted,
-    });
-    if (res.data.id === todo.id) todo.todo = res.data.todo;
-    setEdit((cur) => !cur);
   };
 
   return (
