@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { post } from '../api';
 import { AccessTokenContext } from '../contexts/AccessTokenContext';
-import AskRedirect from '../components/AuthUI/AskRedirect';
-import Input from '../components/AuthUI/Input';
-import Button from '../components/AuthUI/Button';
+import AskRedirect from '../components/UI/AskRedirect';
+import Input from '../components/UI/Input';
+import Button from '../components/UI/Button';
 
 function SignIn() {
   const navigate = useNavigate();

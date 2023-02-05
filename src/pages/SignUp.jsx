@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { post } from '../api';
-import AskRedirect from '../components/AuthUI/AskRedirect';
-import Button from '../components/AuthUI/Button';
-import Input from '../components/AuthUI/Input';
+import AskRedirect from '../components/UI/AskRedirect';
+import Button from '../components/UI/Button';
+import Input from '../components/UI/Input';
 
 function SignUp() {
   const navigate = useNavigate();
