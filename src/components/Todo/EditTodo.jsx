@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { put } from '../../api';
 import Button from '../TodoUI/Button';
 import Input from '../TodoUI/Input';
+import { TodoButtonWrapper } from '../TodoUI/Layout';
 
 function EditTodo({ todo, setEdit }) {
   const [inpTodo, setInpTodo] = useState(todo.todo);
@@ -33,18 +34,20 @@ function EditTodo({ todo, setEdit }) {
           value: inpTodo,
         }}
       />
-      <Button
-        btnText="제출"
-        button={{ [`data-testid`]: 'submit-button', type: 'submit' }}
-      />
-      <Button
-        btnText="취소"
-        button={{
-          [`data-testid`]: 'cancel-button',
-          type: 'button',
-          onClick: () => setEdit((cur) => !cur),
-        }}
-      />
+      <TodoButtonWrapper>
+        <Button
+          btnText="제출"
+          button={{ [`data-testid`]: 'submit-button', type: 'submit' }}
+        />
+        <Button
+          btnText="취소"
+          button={{
+            [`data-testid`]: 'cancel-button',
+            type: 'button',
+            onClick: () => setEdit((cur) => !cur),
+          }}
+        />
+      </TodoButtonWrapper>
     </form>
   );
 }

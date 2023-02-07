@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { post } from '../../api';
 import Button from '../TodoUI/Button';
 import Input from '../TodoUI/Input';
+import { AddtodoWrapper, Space } from '../TodoUI/Layout';
 
 function AddTodo({ setTodoList }) {
   const [inpTodo, setInpTodo] = useState('');
@@ -25,22 +26,25 @@ function AddTodo({ setTodoList }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input
-        input={{
-          [`data-testid`]: 'new-todo-input',
-          type: 'text',
-          placeholder: '할 일 입력',
-          required: true,
-          autoFocus: true,
-          minLength: 1,
-          onChange: (e) => setInpTodo(e.target.value),
-          value: inpTodo,
-        }}
-      />
-      <Button
-        btnText="추가"
-        button={{ [`data-testid`]: 'new-todo-add-button', type: 'submit' }}
-      />
+      <AddtodoWrapper>
+        <Input
+          input={{
+            [`data-testid`]: 'new-todo-input',
+            type: 'text',
+            placeholder: '할 일 입력',
+            required: true,
+            autoFocus: true,
+            minLength: 1,
+            onChange: (e) => setInpTodo(e.target.value),
+            value: inpTodo,
+          }}
+        />
+        <Space />
+        <Button
+          btnText="추가"
+          button={{ [`data-testid`]: 'new-todo-add-button', type: 'submit' }}
+        />
+      </AddtodoWrapper>
     </form>
   );
 }

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { get } from '../api';
 import AddTodo from '../components/Todo/AddTodo';
 import TodoItem from '../components/Todo/TodoItem';
+import Layout from '../components/TodoUI/Layout';
 
 function Todo() {
   const [todolist, setTodoList] = useState([]);
@@ -21,13 +22,16 @@ function Todo() {
   }, []);
 
   return (
-    <>
-      <div>Todo</div>
+    <Layout>
       <AddTodo setTodoList={setTodoList} />
-      {todolist.map((todo) => {
-        return <TodoItem key={todo.id} todo={todo} setTodoList={setTodoList} />;
-      })}
-    </>
+      <ul>
+        {todolist.map((todo) => {
+          return (
+            <TodoItem key={todo.id} todo={todo} setTodoList={setTodoList} />
+          );
+        })}
+      </ul>
+    </Layout>
   );
 }
 
