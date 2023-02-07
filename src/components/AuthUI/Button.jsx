@@ -27,4 +27,8 @@ const StyledBtn = styled.button`
     font-weight: 700;
     font-family: 'Pretendard', sans-serif;
   }
+  &:disabled {
+    background-color: #c1c4c9;
+    cursor: not-allowed;
+  }
 `;
