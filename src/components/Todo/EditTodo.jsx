@@ -32,6 +32,7 @@ function EditTodo({ todo, setEdit }) {
           [`data-testid`]: 'modify-input',
           onChange: (e) => setInpTodo(e.target.value),
           value: inpTodo,
+          autoFocus: true,
         }}
       />
       <TodoButtonWrapper>
