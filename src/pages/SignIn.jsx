@@ -10,6 +10,7 @@ function SignIn() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isSubmited, setIsSubmited] = useState(false);
   const { setToken } = useContext(AccessTokenContext);
 
   const saveAccessToken = (res) => {
@@ -20,16 +21,17 @@ function SignIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmited === true) return;
     try {
       if (isFormValid) {
+        setIsSubmited(true);
         const res = await post('auth/signin', {
           email,
           password,
         });
         saveAccessToken(res);
       }
-      alert('환영합니다!');
-      navigate('/todo');
+      navigate('/todo', { replace: true });
     } catch (error) {
       if (error.response.data.message) {
         error.response.data.message === 'Unauthorized'
@@ -37,6 +39,7 @@ function SignIn() {
           : alert(error.response.data.message);
       }
     }
+    setIsSubmited(false);
   };
 
   const isFormValid = email.includes('@') && password.length >= 8;

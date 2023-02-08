@@ -9,11 +9,14 @@ function SignUp() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isSubmited, setIsSubmited] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmited === true) return;
     try {
       if (isFormValid) {
+        setIsSubmited(true);
         await post('auth/signup', {
           email,
           password,
@@ -24,6 +27,7 @@ function SignUp() {
     } catch (error) {
       if (error.response.data.message) alert(error.response.data.message);
     }
+    setIsSubmited(false);
   };
 
   const isFormValid = email.includes('@') && password.length >= 8;
