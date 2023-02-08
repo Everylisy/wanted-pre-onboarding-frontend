@@ -8,7 +8,7 @@ const Button = (props) => {
           <span>{props.btnText}</span>
         </AddButton>
       ) : (
-        <TodoButton {...props.button}>
+        <TodoButton {...props.button} color={props.color}>
           <span>{props.btnText}</span>
         </TodoButton>
       )}
@@ -39,6 +39,7 @@ const TodoButton = styled.button`
   background: none;
   cursor: pointer;
   span {
+    color: ${(props) => props?.color};
     white-space: nowrap;
     font-size: 1rem;
     font-family: 'Pretendard', sans-serif;

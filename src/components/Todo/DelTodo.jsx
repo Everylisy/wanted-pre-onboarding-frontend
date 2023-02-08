@@ -15,6 +15,7 @@ function DelTodo({ todoId, setTodoList }) {
     <Button
       btnText="삭제"
       button={{ [`data-testid`]: 'delete-button', onClick: handleDelete }}
+      color="#FF3E55"
     />
   );
 }
