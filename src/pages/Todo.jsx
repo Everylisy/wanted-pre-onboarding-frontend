@@ -13,7 +13,7 @@ function Todo() {
       const res = await get('todos');
       if (res) setTodoList(res.data);
     } catch (error) {
-      console.log(error);
+      if (error.response.data.message) alert(error.response.data.message);
     }
   };
 
