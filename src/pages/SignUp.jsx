@@ -4,6 +4,7 @@ import { post } from '../api';
 import Input from '../components/AuthUI/Input';
 import Button from '../components/AuthUI/Button';
 import Layout from '../components/AuthUI/Layout';
+import InputValidation from '../components/AuthUI/InputValidation';
 
 function SignUp() {
   const navigate = useNavigate();
@@ -30,7 +31,9 @@ function SignUp() {
     setIsSubmited(false);
   };
 
-  const isFormValid = email.includes('@') && password.length >= 8;
+  const isEmailValid = email.includes('@');
+  const isPasswordValid = password.length >= 8;
+  const isFormValid = isEmailValid && isPasswordValid;
 
   return (
     <Layout>
@@ -48,6 +51,9 @@ function SignUp() {
             value: email,
           }}
         />
+        {!isEmailValid && email.length > 0 && (
+          <InputValidation inputType="email" />
+        )}
         <Input
           label="비밀번호"
           input={{
@@ -61,6 +67,9 @@ function SignUp() {
             value: password,
           }}
         />
+        {!isPasswordValid && password.length > 0 && (
+          <InputValidation inputType="password" />
+        )}
         <Button
           btnText="회원가입"
           button={{

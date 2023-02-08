@@ -5,6 +5,7 @@ import { AccessTokenContext } from '../contexts/AccessTokenContext';
 import Input from '../components/AuthUI/Input';
 import Button from '../components/AuthUI/Button';
 import Layout from '../components/AuthUI/Layout';
+import InputValidation from '../components/AuthUI/InputValidation';
 
 function SignIn() {
   const navigate = useNavigate();
@@ -42,7 +43,9 @@ function SignIn() {
     setIsSubmited(false);
   };
 
-  const isFormValid = email.includes('@') && password.length >= 8;
+  const isEmailValid = email.includes('@');
+  const isPasswordValid = password.length >= 8;
+  const isFormValid = isEmailValid && isPasswordValid;
 
   return (
     <Layout>
@@ -60,6 +63,9 @@ function SignIn() {
             value: email,
           }}
         />
+        {!isEmailValid && email.length > 0 && (
+          <InputValidation inputType="email" />
+        )}
         <Input
           label="비밀번호"
           input={{
@@ -73,6 +79,9 @@ function SignIn() {
             value: password,
           }}
         />
+        {!isPasswordValid && password.length > 0 && (
+          <InputValidation inputType="password" />
+        )}
         <Button
           btnText="로그인"
           button={{
