@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import Button from '../TodoUI/Button';
 import { ListWrapper, TodoButtonWrapper } from '../TodoUI/Layout';
 import CheckBox from './CheckBox';
@@ -33,4 +33,4 @@ function TodoItem({ todo, setTodoList }) {
   );
 }
 
-export default TodoItem;
+export default memo(TodoItem);
