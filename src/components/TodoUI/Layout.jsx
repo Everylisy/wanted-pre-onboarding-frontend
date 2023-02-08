@@ -1,12 +1,16 @@
 import styled from 'styled-components';
+import LogoutButton from './LogoutButton';
 
 function Layout({ children }) {
   return (
     <Wrapper>
       <Container>
         <HeaderWrapper>
-          <Header>Simple Todo</Header>
-          <Description>할 일을 계획하고, 실천해보세요.</Description>
+          <HeaderTextWrapper>
+            <Header>Simple Todo</Header>
+            <Description>할 일을 계획하고, 실천해보세요.</Description>
+          </HeaderTextWrapper>
+          <LogoutButton>로그아웃</LogoutButton>
         </HeaderWrapper>
         <FormWrapper>{children}</FormWrapper>
       </Container>
@@ -28,8 +32,9 @@ const Container = styled.div`
   min-height: 392px;
 `;
 
-const HeaderWrapper = styled.div`
-  padding: 24px 18px 4px;
+const HeaderTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const Header = styled.h3`
@@ -41,6 +46,13 @@ const Header = styled.h3`
 const Description = styled.p`
   color: grey;
   font-size: 0.9rem;
+`;
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 24px 18px 4px;
 `;
 
 const FormWrapper = styled.div`
