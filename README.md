@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# 🟣 원티드 프리온보딩 프론트엔드 선발과제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. 프로젝트 실행 방법
 
-## Available Scripts
+1. `git clone` 명령어로 프로젝트 저장소를 복제해주세요.
 
-In the project directory, you can run:
+```
+git clone https://github.com/Everylisy/wanted-pre-onboarding-frontend.git
+```
 
-### `npm start`
+2. `npm` 명령어로 패키지를 설치해주세요.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. 패키지 설치가 완료되면, 아래 명령어로 웹 어플리케이션을 실행해주세요.
 
-### `npm test`
+```
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br/>
 
-### `npm run build`
+## 2. 프로젝트 데모 영상
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ✅ 로그인, 회원가입 / 리다이렉트
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://user-images.githubusercontent.com/60170829/217871112-4459d119-1470-41d5-9240-09aeb1df314a.mp4
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br/>
 
-### `npm run eject`
+### ✅ TODO LIST / 로그아웃
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+https://user-images.githubusercontent.com/60170829/217871630-f896d8f6-a9ad-4e19-89bd-e0b486192c41.mp4
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 3. 기술 스택 및 파일 구조
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 기술 스택
 
-## Learn More
+- `React`, `react-router-dom`, `Axios`, `styled-components`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<details>
+<summary><b>파일 구조도</b></summary>
 
-### Code Splitting
+```
+src
+ ┣ components
+ ┃ ┃
+ ┃ ┣ AuthUI
+ ┃ ┃ ┣ AskRedirect.jsx
+ ┃ ┃ ┣ Button.jsx
+ ┃ ┃ ┣ Input.jsx
+ ┃ ┃ ┣ InputValidation.jsx
+ ┃ ┃ ┗ Layout.jsx
+ ┃ ┃
+ ┃ ┣ Todo
+ ┃ ┃ ┣ AddTodo.jsx
+ ┃ ┃ ┣ CheckBox.jsx
+ ┃ ┃ ┣ DelTodo.jsx
+ ┃ ┃ ┣ EditTodo.jsx
+ ┃ ┃ ┗ TodoItem.jsx
+ ┃ ┃
+ ┃ ┗ TodoUI
+ ┃ ┃ ┣ Button.jsx
+ ┃ ┃ ┣ Input.jsx
+ ┃ ┃ ┣ Layout.jsx
+ ┃ ┃ ┗ LogoutButton.jsx
+ ┃
+ ┣ contexts
+ ┃ ┣ AccessTokenContext.jsx
+ ┃ ┗ AccessTokenProvider.jsx
+ ┃
+ ┣ pages
+ ┃ ┣ SignIn.jsx
+ ┃ ┣ SignUp.jsx
+ ┃ ┗ Todo.jsx
+ ┃
+ ┣ api.js
+ ┣ App.jsx
+ ┣ GlobalStyle.js
+ ┣ index.jsx
+ ┗ Router.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>
+<br/>
