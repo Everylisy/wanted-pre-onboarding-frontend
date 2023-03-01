@@ -1,5 +1,12 @@
 # 🟣 원티드 프리온보딩 프론트엔드 선발과제
 
+## 0. 과제 및 배포 URL
+
+ ### ✅ [배포 URL](https://wanted-pre-onboarding-frontend-everylisy.vercel.app)  
+ ### 📚 [과제 URL](https://github.com/walking-sunset/selection-task)
+
+<br/>
+
 ## 1. 프로젝트 실행 방법
 
 1. `git clone` 명령어로 프로젝트 저장소를 복제해주세요.
